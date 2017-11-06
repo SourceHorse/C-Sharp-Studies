@@ -22,6 +22,18 @@ namespace Classes2
             Calculator calculator = new Calculator();
             Console.WriteLine(calculator.Add(3,5));
             Console.WriteLine(calculator.Subtract(7,2));
+
+            Car fusion = new Car();
+            fusion.Make = "Ford";
+            fusion.Model = "Fusion";
+            fusion.Year = 2017;
+            fusion.Speed = 30;
+
+            fusion.GetDetails();
+            fusion.GetSpeed();
+            fusion.Accelerate(5);
+            fusion.Accelerate(5);
+            fusion.Decelerate(15);
         }
     }
 }
