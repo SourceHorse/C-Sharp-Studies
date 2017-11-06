@@ -18,7 +18,6 @@ namespace Classes2
             ross.FavoriteShow = "Game of Thrones";
             ross.Introduce();
 
-
             Calculator calculator = new Calculator();
             Console.WriteLine(calculator.Add(3,5));
             Console.WriteLine(calculator.Subtract(7,2));
@@ -31,9 +30,16 @@ namespace Classes2
 
             fusion.GetDetails();
             fusion.GetSpeed();
-            fusion.Accelerate(5);
-            fusion.Accelerate(5);
-            fusion.Decelerate(15);
+            fusion.Accelerate(15);
+            fusion.Accelerate(15);
+            fusion.Decelerate(10);
+
+            SpeedCamera speedCamera = new SpeedCamera();
+            speedCamera.SpeedLimit = 45;
+            speedCamera.CarMakeModel = fusion.Make + " " + fusion.Model;
+            speedCamera.CarSpeed = fusion.Speed;
+
+            speedCamera.CameraMethod();
         }
     }
 }
