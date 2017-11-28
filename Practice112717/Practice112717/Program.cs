@@ -56,25 +56,30 @@ namespace Practice112717
 
             //Parse
             Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
-
-
+            
+            //-----------------------------------------
+            //----------
+            Console.WriteLine("Please enter the desired length of the substring");
+            var n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter a string to search");
+            string s = Console.ReadLine();
+            var lowestRepeatedSubstring = "No repeated substring found";
+            var lowIndex = s.Length;
+            for (var i = 0; i < s.Length - n; i++)
+            {
+                var target = s.Substring(i, n);
+                var second = s.IndexOf(target, i + 1);
+                if (second > 0 && second < lowIndex)
+                {
+                    lowestRepeatedSubstring = target + " is the first repeated substring";
+                    lowIndex = second;
+                }
+            }
+            Console.WriteLine(lowestRepeatedSubstring);
             //int n = Convert.ToInt32(Console.ReadLine());
             //string[] a_temp = Console.ReadLine().Split(' ');
             //int[] a = Array.ConvertAll(a_temp, Int32.Parse);
             //int swaps = 0;
-            /*
-            for (var i = 0; i < a.Length; i++) {
-                for (var j = i + 1; j < a.Length; j++) {
-                    int first = a[i];
-                    int second = a[j];
-                    if (first > second) {
-                        a[i] = second;
-                        a[j] = first;
-                        swaps++;
-                    }
-                }
-            }
-            */
             ////------------------------------BUBBLE SORT-------------------------------
             //bool isSorted = false;
             //while (isSorted != true)
