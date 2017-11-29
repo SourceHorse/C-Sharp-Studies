@@ -8,25 +8,31 @@ namespace FindARepeat
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Please enter the desired length of the substring");
             var n = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter a string to search");
             string s = Console.ReadLine();
+            
+            Console.WriteLine(RepeatSearch(n, s));
+        }
+
+        public static string RepeatSearch(int stringLength, string searchString)
+        {
             var lowestRepeatedSubstring = "No repeated substring found";
-            var lowIndex = s.Length;
-            for (var i = 0; i < s.Length - n; i++)
+            var lowIndex = searchString.Length;
+            for (var i = 0; i < searchString.Length - stringLength; i++)
             {
-                var target = s.Substring(i, n);
-                var second = s.IndexOf(target, i + 1);
+                var target = searchString.Substring(i, stringLength);
+                var second = searchString.IndexOf(target, i + 1);
                 if (second > 0 && second < lowIndex)
                 {
                     lowestRepeatedSubstring = target + " is the first repeated substring";
                     lowIndex = second;
                 }
             }
-            Console.WriteLine(lowestRepeatedSubstring);
+            return lowestRepeatedSubstring;
         }
     }
 }
