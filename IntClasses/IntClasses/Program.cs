@@ -10,8 +10,10 @@ namespace IntClasses
     {
         static void Main(string[] args)
         {
-            var customer = new Customer(true, 123456789, "Jim");
-            var customer1 = new Customer(false, 888888888, "Andy");
+            var customer = new Customer("Jim", 123456789);
+            customer.Prime = true;
+
+            var customer1 = new Customer("Andy", 888888888);
             var shipping = new Shipping();
 
             Console.WriteLine(customer.Name);

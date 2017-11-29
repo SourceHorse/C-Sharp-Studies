@@ -12,27 +12,23 @@ namespace IntClasses
         public string Name;
         public int ID;
         public bool Prime;
+        public List<Order> Orders;
 
         public Customer()
         {
+            Orders = new List<Order>();
         }
-
+        
         public Customer(string name)
+            : this()
         {
             this.Name = name;
         }
 
-        public Customer(int id, string name)
+        public Customer(string name, int id)
+            : this(name)
         {
             this.ID = id;
-            this.Name = name;
-        }
-
-        public Customer(bool prime, int id, string name)
-        {
-            this.Prime = prime;
-            this.ID = id;
-            this.Name = name;
         }
     }
 }
