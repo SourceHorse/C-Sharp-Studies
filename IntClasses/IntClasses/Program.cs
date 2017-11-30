@@ -16,6 +16,11 @@ namespace IntClasses
             var customer1 = new Customer("Andy", 888888888);
             var shipping = new Shipping();
 
+            var customer2 = new Customer
+            {
+                ID = 565656565,
+                Name = "Amanda"
+            };
             Console.WriteLine(customer.Name);
             Console.WriteLine(customer.ID);
             Console.WriteLine(customer.Prime);
@@ -23,6 +28,10 @@ namespace IntClasses
             Console.WriteLine(customer1.Name);
             Console.WriteLine(customer1.ID);
             Console.WriteLine(customer1.Prime);
+
+            Console.WriteLine(customer2.Name);
+            Console.WriteLine(customer2.ID);
+            Console.WriteLine(customer2.Prime);
 
             Console.WriteLine(shipping.FreeShipping(customer1.Prime));
 
