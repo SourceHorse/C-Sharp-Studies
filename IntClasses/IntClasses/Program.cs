@@ -10,31 +10,57 @@ namespace IntClasses
     {
         static void Main(string[] args)
         {
+
+        }
+
+        static void UseConstructor()
+        {
             var customer = new Customer("Jim", 123456789);
             customer.Prime = true;
+        }
 
-            var customer1 = new Customer("Andy", 888888888);
-            var shipping = new Shipping();
-
-            var customer2 = new Customer
+        static void UseOut()
+        {
+            //var number = int.Parse("abc");
+            int otherNumber;
+            var trynumber = int.TryParse("abc", out otherNumber);
+            if (trynumber)
             {
-                ID = 565656565,
-                Name = "Amanda"
-            };
-            Console.WriteLine(customer.Name);
-            Console.WriteLine(customer.ID);
-            Console.WriteLine(customer.Prime);
+                Console.WriteLine(otherNumber);
+            }
+            else
+            {
+                Console.WriteLine("Conversion failed");
+            }
+        }
 
-            Console.WriteLine(customer1.Name);
-            Console.WriteLine(customer1.ID);
-            Console.WriteLine(customer1.Prime);
+        static void UseParams()
+        {
+            var calculator = new Calculator();
+            Console.WriteLine(calculator.Add(1, 2));
+            Console.WriteLine(calculator.Add(1, 2, 3));
+            Console.WriteLine(calculator.Add(1, 2, 3, 4));
+            Console.WriteLine(calculator.Add(new int[] { 1, 2, 3, 4, 5 }));
 
-            Console.WriteLine(customer2.Name);
-            Console.WriteLine(customer2.ID);
-            Console.WriteLine(customer2.Prime);
+        }
 
-            Console.WriteLine(shipping.FreeShipping(customer1.Prime));
+        static void UsePoints()
+        {
+            try
+            {
+                var point = new Point(10, 20);
+                point.Move(new Point(40, 60));
+                Console.WriteLine("Point is at ({0}, {1})", point.X, point.Y);
 
+                point.Move(100, 200);
+                Console.WriteLine("Point is at ({0}, {1})", point.X, point.Y);
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An unexpexted error occured.");
+                throw;
+            }
         }
     }
 }
