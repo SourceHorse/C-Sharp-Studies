@@ -4,9 +4,14 @@ namespace accessModifers
 {
     public class Person
     {
-        private string _name;
+        public string Name { get; set; }
+        public string Username { get; set; }
+        public DateTime Birthdate { get; private set; }
 
-        public DateTime Birthdate { get; set; }
+        public Person(DateTime birthdate)
+        {
+            Birthdate = birthdate;
+        }
 
         public int Age
         {
@@ -19,15 +24,6 @@ namespace accessModifers
             }
         }
 
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (!String.IsNullOrWhiteSpace(value))
-                        _name = value;
-            }
-        }
 
         //public void SetBirthdate(DateTime birthdate)
         //{
