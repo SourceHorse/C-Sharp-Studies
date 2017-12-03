@@ -11,11 +11,15 @@ namespace accessModifers
         static void Main(string[] args)
         {
             var person = new Person();
-            person.SetBirthdate(new DateTime(1984, 7, 23));
-            person.SetName("Cronk McDooferson");
 
-            Console.WriteLine(person.GetBirthdate());
-            Console.WriteLine(person.GetName());
+            person.Birthdate = new DateTime(1977, 7, 24);
+            Console.WriteLine(person.Age);
+
+            //person.SetBirthdate(new DateTime(1984, 7, 23));
+            //person.SetName("Cronk McDooferson");
+
+            //Console.WriteLine(person.GetBirthdate());
+            //Console.WriteLine(person.GetName());
         }
     }
 }
